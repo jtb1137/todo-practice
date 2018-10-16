@@ -1,13 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
 
 const TodoList = props => {
+  const allTodos = props.todos;
+  const fullList = allTodos.length ? (
+    allTodos.map(todo => {
+      return <li key={todo.id}>{todo.content}</li>;
+    })
+  ) : (
+    <li>No tasks to do!</li>
+  );
+
   return (
     <div>
-      <ul>
-        {props.todos.map(todo => {
-          return <li key={todo.id}>{todo.content}</li>;
-        })}
-      </ul>
+      <ul>{fullList}</ul>
     </div>
   );
 };
