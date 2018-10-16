@@ -4,7 +4,11 @@ const TodoList = props => {
   const allTodos = props.todos;
   const fullList = allTodos.length ? (
     allTodos.map(todo => {
-      return <li key={todo.id}>{todo.content}</li>;
+      return (
+        <li className="collection-item" key={todo.id}>
+          {todo.content}
+        </li>
+      );
     })
   ) : (
     <li>No tasks to do!</li>
@@ -12,7 +16,7 @@ const TodoList = props => {
 
   return (
     <div>
-      <ul>{fullList}</ul>
+      <ul className="collection center">{fullList}</ul>
     </div>
   );
 };

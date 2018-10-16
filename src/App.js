@@ -15,7 +15,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
+      <div className="App container">
         <h1 className="center">ToDos!</h1>
         <TodoList todos={this.state.todos} />
       </div>
